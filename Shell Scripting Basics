@@ -1,0 +1,626 @@
+Shell scripting
+=================
+echo -e 
+
+\c to keep the cursor in same line
+
+
+
+read filename
+if [-e $filename]  to check whether file exists or not 
+if [-f $filename]  to check file exists and it is regular or not 
+if [-d $filename]   to check if directory exists or not 
+if [-c $filename]   to check if character specail files like text or data
+if [-b $filename]   to check if block  specail files like image or picture or video it is binary file 
+if [-s $filename]   to check if files is empty or not 
+if [-r $filename]   to check if file has read permission
+if [-w $filename]   to check if file has write permission
+if [-x $filename]   to check if file has execute permission
+cat > test
+Write something here 
+Ctrl+d to exit from here 
+
+
+chmod -w  to remove write permission
+chmod +w  to add write permission
+
+&& - AND Operator
+
+age=20
+
+if [ "$age" -gt 18 ] && [ "$age" -lt 30 ]
+
+if [ "$age" -gt 18 -a  "$age" -lt 30 ]
+
+if [[ "$age" -gt 18 &&  "$age" -lt 30 ]]
+
+-a AND Operator 
+
+
+|| - OR Operator
+
+
+if [ "$age" -gt 18 ] || [ "$age" -lt 30 ]
+if [ "$age" -gt 18 -o "$age" -lt 30 ]
+if [[ "$age" -gt 18 || "$age" -lt 30 ]]
+-o OR Operator
+
+
+
+
+
+num1=20
+num2=5
+
+
+echo $(( num1 + num2 ))  - ADDITION
+echo $(( num1 - num2 ))  - SUBRATION
+echo $(( num1 * num2 ))  - Multiplication
+echo $(( num1 / num2 ))  - Division
+echo $(( num1 % num2 ))  - Modulus
+
+
+echo $( expr $num1 + $num2 )  - ADDITION
+echo $( expr $num1 - $num2 )  - SUBRATION
+echo $( expr $num1 \* $num2 )  - Multiplication
+echo $( expr $num1 / $num2 )  - Division
+echo $( expr $num1 % $num2 )  - Modulus
+
+
+
+
+bc basic calculator 
+
+man bc 
+
+
+num1=20.5
+num2=5
+
+
+echo "20.5+5" | bc 
+echo "20.5-5" | bc 
+echo "20.5*5" | bc 
+echo "scale=2;20.5/5" | bc 
+echo "20.5%5" | bc 
+ 
+ 
+echo "$num1+$num2" | bc 
+echo "$num1-$num2" | bc 
+echo "20.5*5" | bc 
+echo "scale=2;20.5/5" | bc 
+echo "20.5%5" | bc 
+ 
+ 
+num=27
+
+echo "scale=2;sqrt($num)" | bc -l
+echo "scale=2;3^3" | bc -l
+
+
+Case
+========================================================================================================================================
+
+case expression in 
+                pattern1)
+                  statements;;
+                pattern2)
+                                statements;;
+                ...
+esac
+
+
+#! /bin/bash
+
+vehicle =$1
+
+
+case $vehicle in
+
+                "car" )
+                                                echo "Rent of $vehicle is 100 dollar";;
+                "van" )
+                                                echo "Rent of $vehicle is 80 dollar";;
+    "bicycle" )
+                                                echo "Rent of $vehicle is 90 dollar";;
+                "truck" )
+                                                echo "Rent of $vehicle is 340 dollar";;
+                "scooty" )
+                                                echo "Rent of $vehicle is 440 dollar";;
+                * )
+                                                echo "vehicle is unknown";;                        
+esac
+
+
+#! /bin/bash
+
+
+echo -e "Enter the character: \c"
+read value
+
+case $value in
+
+                [a-z] )
+                                                echo "User entered $value a to z ";;
+                [A-Z] )
+                                                echo "User entered $value A to Z";;
+    [0-9] )
+                                                echo "User entered $value 0 to 9";;
+                ? )
+                                                echo "User entered $value specail character";;
+                * )
+                                                echo "Unknown Input";;                              
+esac
+
+
+
+
+
+
+LANG=C LANG is a environment variable
+? - it is only for one character one 
+* - it is for character with more than one character
+
+
+
+
+Array
+==============================================
+#! /bin/bash
+
+os=('windows','ubunthu','kali')
+
+echo "${os[@]}" to print all the elements of an array
+echo "${os[0]}" to print all the 1st element/index of an array
+echo "${os[1]}" to print all the 2nd element/index of an array
+echo "${os[2]}" to print all the 3rd element/index of an array
+
+echo "${!os[@]}" to print all the indexes  of an array
+echo "${#os[@]}" to print lenght of the array
+
+
+
+
+os[3]='mac'  to update the index/elements 
+unset os[2]
+
+
+
+
+
+While Loop
+================================================================================================
+
+#! /bin/bash
+#while loops
+
+while [condition]
+do 
+                command1
+                command2
+                command3
+done
+
+
+#! /bin/bash
+#while loops
+
+
+n=1
+
+while [ $n -le 10 ]
+do 
+                echo "$n"
+                n=$(( n+1 ))
+done
+
+
+#! /bin/bash
+#while loops
+
+
+n=1
+
+while [ $n -le 10 ]
+do 
+                echo "$n"
+                (( n++ ))
+done
+
+#! /bin/bash
+#while loops
+
+
+n=1
+
+while [ $n -le 10 ]
+do 
+                echo "$n"
+                (( ++n ))
+done
+
+
+#! /bin/bash
+#while loops
+
+
+n=1
+
+while (( $n <= 10 ))
+do 
+                echo "$n"
+                (( ++n ))
+done
+
+
+Sleep
+==================================================================================
+
+#! /bin/bash
+#while with sleep command
+
+
+n=1
+
+while [ $n -le 10 ]
+do 
+                echo "$n"
+                (( n++ ))
+                sleep 2 
+done
+
+
+
+
+To Open Terminals
+=====================
+#! /bin/bash
+n=1
+
+while [ $n -le 3 ]
+do 
+                echo "$n"
+                (( n++ ))
+                gnome-terminal &
+                xterm  & 
+done
+
+Read files using while loops
+=================================
+#! /bin/bash
+
+
+while read p
+
+do 
+                echo $p
+done <hello.sh 
+
+
+
+
+
+#! /bin/bash
+
+
+cat hello.sh | while read p
+
+do 
+                echo $p
+done
+
+
+
+IFS - Internal Field Seperator 
+
+
+#! /bin/bash
+
+
+
+while IFS= read -r line
+
+do 
+                echo $line
+done < hello.sh 
+
+
+#! /bin/bash
+
+
+
+while IFS=' 'read -r line
+
+do 
+                echo $line
+done < hello.sh 
+
+
+Until Loop 
+============================================================================================================================================
+While loop -->Till condition is true commands will execute 
+Until loop -->Till condition is false commands will execute 
+
+
+#! /bin/bash
+#until loops
+
+until [condition]
+
+do 
+                command1
+                command2
+                command3
+                .
+                ..
+                ..
+                commandN
+done
+
+
+
+#! /bin/bash
+#Until Loop
+n=1
+
+
+until [ $n -ge 10 ]
+
+do 
+                echo $n
+                n=$(( n+1 ))
+done
+
+#! /bin/bash
+#Until Loop
+n=1
+
+
+until [ $n -gt 10 ]
+
+do 
+                echo $n
+                n=$(( n+1 ))
+done
+
+
+#! /bin/bash
+#Until Loop
+n=1
+
+
+until (( $n > 10 ))
+
+do 
+                echo $n
+                n=$(( n+1 ))
+done
+
+
+
+#! /bin/bash
+#Until Loop
+n=1
+
+
+until (( $n > 10 ))
+
+do 
+                echo $n
+                n=(( n++ ))
+done
+
+
+#! /bin/bash
+#Until Loop
+n=1
+
+
+until (( $n > 10 ))
+
+do 
+                echo $n
+                n=(( ++n ))
+done
+
+
+
+
+
+For Loops
+==================================================================================================================================
+#! /bin/bash
+#for loops
+
+
+for VARIABLE in 1 2 3 4 5 ... N
+
+do 
+                command1
+                command2
+                command3
+                
+done
+
+
+
+
+#! /bin/bash
+#for loops
+
+
+for i in 1 2 3 4 5
+
+do 
+                echo $i
+                
+done
+
+
+#! /bin/bash
+#for loops
+
+
+for i in {1..10}
+
+do 
+                echo $i
+                
+done
+
+#! /bin/bash
+#for loops
+
+
+for i in {1..10..2} --{START..END..INCREMENT}
+
+do 
+                echo $i
+                
+done
+
+
+#! /bin/bash
+#for loops
+
+
+for i in {0..10..2} --{START..END..INCREMENT}
+
+do 
+                echo $i
+                
+done
+
+echo ${BASH_VERSION}
+
+
+
+
+#! /bin/bash
+#for loops
+
+echo ${BASH_VERSION}
+for i in (( i=0; i<5; i++ ))
+
+do 
+                echo $i
+                
+done
+
+For loop with commands
+==========================================================================
+#! /bin/bash
+# for loops
+
+for command in 
+do 
+                echo $command
+done
+
+
+
+#! /bin/bash
+# for loops
+
+for command in ls pwd date 
+do 
+                echo "--------------------$command---------------------------"
+                echo $command
+done
+
+
+
+#! /bin/bash
+# for loops
+
+for item in *
+do 
+                if [ -d  $item ]
+                then 
+                                echo $item
+                fi 
+                
+done
+
+
+#! /bin/bash
+# for loops
+
+for item in *
+do 
+                if [ -f  $item ]
+                then 
+                                echo $item
+                fi 
+                
+done
+
+
+
+
+Select Loop
+===========================================================================================================================================
+#! /bin/bash
+#select loop
+
+select varName in list 
+
+do 
+                command1
+                command2
+                command3
+                
+                
+                commandN
+done
+
+
+
+#! /bin/bash
+#select loop
+
+select varName in list 
+
+do 
+                command1
+                command2
+                command3
+                
+                
+                commandN
+done
+
+
+#! /bin/bash
+#select loop
+
+select name in mark john tom ben  
+
+do 
+                echo "$name selected"
+
+done
+
+
+
+#! /bin/bash
+#select loop
+
+select name in mark john tom ben  
+
+do 
+                case $name in 
+                mark)
+                                echo mark selected;;
+                mark)
+                                echo mark selected;;
+                mark)
+                                echo mark selected;;
+                mark)
+                                echo mark selected;;
+                mark)
+                                echo mark selected;;
+                                
+                esac
+
+done
