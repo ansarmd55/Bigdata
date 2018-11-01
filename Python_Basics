@@ -1,0 +1,357 @@
+Python
+============
+print ("Hello World")
+
+Math Functions
+================
++ for addtion
+- for subtraction
+/ for division
+* for multiplication
+^
+
+
+
+5+37
+-34+4
+34-37
+34-56
+21/3
+23/7   -- will give you decimal value also
+23//7  -- if you do not want to print decimal the use //
+57.347923/23.1843 -- will give decimal values also
+56 * 4 
+2*2*2
+2**15   -- use ** for exponent 2^15 
+2**5 
+
+
+3 * 4 + 5 - 6 / 2
+
+If there are multiple funtions This is the order in which the operaions takes place
+PEMDAS - Parenthesis Exponents Multiplication Division Addtion Subtraction 
+
+
+Variables in Python
+==========================
+variable is a container for some value(integer,string,float..etc)
+
+declare a variable
+--------------------
+myVariableName ---this is the convention which is followed for variable
+
+myVariable = 30 
+myVariable
+
+MyVariable --- python is a case sensitive language and this will throw an error 
+
+
+
+myVariable + 34 
+myVariable **3
+value=input("Enter the value:")
+Enter the value:50
+
+value
+'50'
+value +20 
+it will give an error because '50' is a string and whenever a value is in '' it is a string 
+
+and input function takes value as string 
+
+
+To Convert value from string to an integer we have to use cast 
+
+value  = int(input("Enter the value: ")) ---  to cast value as int
+Enter the value:60
+value
+60
+
+value  = float(input("Enter the value: ")) --- to cast value as float 
+
+
+
+Built in Modules and Functions in python
+=========================================
+2 ** 3
+8
+
+Function = A piece of code which executes some logic 
+
+pow(2,3) -- exponent function 
+
+Command to know what are all built in funtions in python
+
+dir(__builtins__)  -- will return all built in functions in python
+
+abs (18.6666)
+len ("Hello")
+
+To know the functionality of the function 
+----------------------------------------------
+help(max)
+
+
+max(4,5,8,7)
+
+
+Built in Modules
+-------------------
+
+import math ---- to include a module by using key word import and module math 
+
+math.sqrt(9)
+3.0
+
+
+squareRoot=math.sqrt   --- to replace the builtin functions and modules 
+squareRoot(9)
+
+
+
+To save a python program
+========================================================================
+Go to Python GUI Idle -->File --> New File 
+
+
+
+x=int(input("Please enter 1st Number"))
+y=int(input("Please enter 2nd Number"))
+z=int(input("Please enter 3rd Number"))
+
+print("The max of three values is: ")
+print(max(x,y,z))
+print("Please enter to exit")
+
+
+File -- > save as -->file.py ---> go to run --> Run Module (or) F5 Key 
+
+
+
+
+=================================================================================================================================
+How to use string in python program
+============================================================================================
+a='I am a single quoted string'
+b="I am a double quoted string"
+c="""I am a triple quoted string"""
+
+print(a)
+print(b)
+print(c)
+
+
+a='I am a \single quoted string don\'t'  -----'\' escape character 
+b="I am a \double \"quoted string"
+c="""I am a \triple \"quoted string"""
+
+print(a)
+print(b)
+print(c)
+
+
+
+a='I am a \\single quoted string don\'t'  -----'\' escape character 
+b="I am a \\double \"quoted string"
+c="""I am a \\triple \"quoted string"""
+
+print(a)
+print(b)
+print(c)
+
+
+
+a='I am a \\single quoted string don\'t'  -----'\' escape character 
+b="I am a \\double \"quoted string"
+c="""I am a \\triple \"quoted string"""
+
+print(len(a))
+print(b)
+print(c)
+
+
+
+
+a='Hello' 
+b="world"
+c="""I am a \\triple \"quoted string"""
+
+print(a + b)  -------- + is a concatination operator it adds or concatinates two strings a and b 
+print(b)
+print(c)
+
+
+
+a='Hello' 
+b="world"
+c="""I am a \\triple \"quoted string"""
+
+print(a * 10) -- to print variabe a 10 times 
+print(a * 100) -- to print variabe a 100 times 
+
+
+
+a='Hello' 
+b=5
+c="""I am a \\triple \"quoted string"""
+
+print(a + b)     --- This will throw an error because a is string and b is integer
+
+to print these twogether 
+
+print (a + str(b))  --- to convert integer/argument to string 
+
+
+
+Python Lists
+======================================================================================================================================
+names=[]
+
+names 
+[]
+
+
+names=["mark","john","louis"]
+names
+[ 'mark','john','louis' ]
+
+
+index of list starts from 0 
+
+index of mark is 0
+index of john is 1
+index of louis is 2
+
+
+
+names[0]
+'mark'
+names[2]
+'louis'
+
+
+Pynton also supports backward index and starts from -1,-2,-3
+=============================================================
+names[-1]
+'louis'
+
+names[-3]
+'mark'
+
+
+
+names.append["patrik"] --- to add one more value to names list 
+
+names
+
+
+
+
+To add list in to a list 
+==============================
+
+age [23,12,32,11]
+
+names.extend[age]
+names
+
+
+python can contaion list with different datatypes like string/float/int/
+
+
+To remove items from list 
+names.remove("patrick")
+
+
+names
+
+To print a list 
+
+print(names)
+
+print(names,age)
+
+To find the length of the list 
+len(names)
+
+max(names)  
+will give you errors because names list has int and string datatypes and it is a mixed list 
+max(age)
+will give you o/p because this list has all integer values 
+
+
+Slicing in Python
+====================================================================
+
+mylist=[0,1,2,3,4,5,6,7,8,9]
+mylist 
+[4,5,6,7]
+mylist[4:8] -- these are indexes 
+
+mylist[5:10] -- these are indexes
+[5,6,7,8,9]
+
+
+
+names=['a','b','c','d','e']
+names=[2:3] -- these are indexes
+['c']
+
+name=[2:5] -- these are indexes
+mylist[4:]  - will print the values from 4 to end of the list 
+mylist[:5]    - will print the valuse from starting to 5 index
+
+
+
+mylist[-4:-2]
+
+mylist[-6:]
+
+to print whole array
+mylist
+mylist[:]
+
+
+to print in some sequence 
+
+mylist[0:10:2] -skips 2 values 
+mylist[0:10:3]
+mylist[::3]
+mylist[::-2]
+
+
+
+IF ELSE Statements
+==================================================================================================================================
+
+n=int(input("Number?"))
+
+if n<0:
+                print ("The Absolute value of" , n ," is",-n)
+                print ("The Absolute value of" , n ," is",-n)
+                print ("The Absolute value of" , n ," is",-n)
+                print ("The Absolute value of" , n ," is",-n)
+else:
+                print ("The Absolute value of" , n ," is", n)
+                print ("The Absolute value of" , n ," is", n)
+                print ("The Absolute value of" , n ," is", n)
+                sumoftwo=50+60
+                print(sumoftwo)
+                
+                
+n=int(input("Number?"))
+
+if n<0:
+                print ("The Absolute value of" , n ," is",-n)
+                print ("The Absolute value of" , n ," is",-n)
+                print ("The Absolute value of" , n ," is",-n)
+                print ("The Absolute value of" , n ," is",-n)
+else:
+                print ("The Absolute value of" , n ," is", n)
+                print ("The Absolute value of" , n ," is", n)
+                print ("The Absolute value of" , n ," is", n)
+                
+                
+sumoftwo=50+60
+print(sumoftwo)
+
