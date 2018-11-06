@@ -1,0 +1,188 @@
+JAVA Tutorials
+======================
+Java - Platform Independent Language
+JVM - Java virtual machine 
+JDK- Java Development Kit
+IDE- Integrated Development Environment -- Eclipse 
+JRE- Java Runtime Environment
+
+
+
+Primitive Data Types
+=======================
+Integer--->example -- init num = 56 
+---------
+byte (1 byte)
+long  (8 bytes) 
+short (2 bytes) 
+int  (4 bytes) 
+
+Float--->example -- float num = 56894.3878347 
+----------
+float ( 4 bytes )
+double (8 bytes )
+
+
+
+Character--->example -- char ch = 'X' 
+-------------
+char (2 bytes) 
+
+
+
+Boolean
+-------------
+bool (1 byte but makes use of 1 bit of i ) --->example -- boolean b = true 
+
+Example for datatypes
+======================
+public class MyClass { 
+
+        public static void main(String[] args) { 
+                // TODO Auto-generated method stub 
+                int my_variable = 10; 
+                int my_variable1 = 10; 
+                float my_decimal = (float)4.5757; 
+                double my_double = 11.34; 
+                char my_char = 'A'; 
+                boolean my_bol = false; 
+                System.out.println(my_variable); 
+                System.out.println(my_variable1); 
+                System.out.println(my_decimal); 
+                System.out.println(my_double); 
+                System.out.println(my_char); 
+                System.out.println(my_bol); 
+        } 
+
+}
+
+
+
+Data Operations
+================
+Arithamatic Operator
+---------------------
++ - Addition
+- - Subtraction
+* - Multiplication
+/ - Division
+% - Modulus
+
+
+Unary Operator
+-----------------
+++ - Increment Operator
+-- - Decrement Operator
+
+Relational Operator
+---------------------
+<   - Less than
+<=  - Less than or equal to
+>	- Greater than
+>=	- Greater than or equal to 
+!= 	- Not equal to
+==  - Equals
+
+Logical Operator
+--------------------
+&& -  And
+|| -  Or
+!  -  Not
+
+
+Comment
+============
+/*
+ * This is a comment
+ */
+
+
+// This is also a comment
+
+
+Hello World program
+=========================
+public class MyClass { 
+
+        public static void main(String[] args) { 
+                // TODO Auto-generated method stub 
+                System.out.println("Hello World"); 
+        } 
+
+}
+
+
+
+Use case Retail shop
+===========================
+public class retail_shop { 
+
+        public static void main(String[] args) { 
+                int itema=200,itemb=75,itemc=500; 
+                double price; 
+                
+                
+                price=((itema*2)+(itemb)+(itemc*3)); 
+                price=price-(.1*price); 
+                price=price+(.05*price); 
+                
+                System.out.println(price); 
+        } 
+
+}
+
+
+Control Statements
+========================
+
+Selection statements
+--------------------
+if .. else 
+
+switch .. case 
+
+
+
+Iteration statements
+---------------------
+while
+do .. while
+for
+
+
+Jump statements
+------------------
+break
+continue
+
+
+Syntax
+=============
+
+if (condition):
+	statements
+	
+else:
+	statements
+	
+	
+Variables
+============
+It is a name to store any value
+
+public class MyClass { 
+
+        public static void main(String[] args) { 
+                // TODO Auto-generated method stub 
+				init x = 10
+			
+                System.out.println("Hello World"); 
+        } 
+
+}
+
+
+How to take a User Input 
+============================
+
+
